@@ -1,4 +1,4 @@
-dns is a simple CLI for [DNS-LG](www.dns-lg.com)
+dns is a simple CLI for [DNS-LG](https://www.dns-lg.com)
 
 # Install
 
@@ -20,9 +20,9 @@ chmod +x /bin/dns
 
 #### Download compiled binary
 
-Linux:
-Windows: 
-MacOS: 
+Linux: https://github.com/mxssl/dns/releases/download/v0.0.1/dns-linux-amd64
+Windows: https://github.com/mxssl/dns/releases/download/v0.0.1/dns-windows-amd64.exe
+MacOS: https://github.com/mxssl/dns/releases/download/v0.0.1/dns-darwin-amd64
 
 # Usage
 
