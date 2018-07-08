@@ -9,7 +9,7 @@ dns is a simple CLI for [DNS-LG](http://www.dns-lg.com)
 ```
 mkdir -p ~/go/src/github.com/mxssl/dns
 cd ~/go/src/github.com/mxssl/dns
-git clone https://github.com/mxssl/dns.git
+git clone https://github.com/mxssl/dns.git .
 dep ensure
 go build -o dns
 mv dns /bin/dns
