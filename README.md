@@ -1,4 +1,4 @@
-dns is a simple CLI for [DNS-LG](https://www.dns-lg.com)
+dns is a simple CLI for [DNS-LG](http://www.dns-lg.com)
 
 # Install
 
