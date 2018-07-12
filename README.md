@@ -26,6 +26,14 @@ Windows: https://github.com/mxssl/dns/releases/download/v0.0.1/dns-windows-amd64
 
 MacOS: https://github.com/mxssl/dns/releases/download/v0.0.1/dns-darwin-amd64
 
+#### Example
+
+```
+# wget https://github.com/mxssl/dns/releases/download/v0.0.1/dns-linux-amd64
+# cp dns-linux-amd64 /bin/dns
+# chmod +x /bin/dns
+```
+
 # Usage
 
 ```
