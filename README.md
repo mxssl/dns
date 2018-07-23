@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/mxssl/dns.svg?branch=master)](https://travis-ci.org/mxssl/dns)
+
 dns is a simple CLI for [DNS-LG](http://www.dns-lg.com)
 
 # Install
