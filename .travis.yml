@@ -5,9 +5,7 @@ go:
 
 before_install:
   - curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh
-  - go get -u github.com/golangci/golangci-lint/cmd/golangci-lint
 
 script:
   - make dep
-  - make test
   - make build
