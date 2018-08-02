@@ -171,7 +171,7 @@ You can you different resolvers:
 
 
 ```
-dns -r "cloudflare" a golang.com    
+dns -r cloudflare a golang.com    
 {
     "question": [
         {
