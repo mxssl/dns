@@ -154,3 +154,41 @@ Use "dns [command] --help" for more information about a command.
 }
 
 ```
+
+## Resolver
+
+You can you different resolvers:
+
+| Name | IP |
+|---|---|
+| cloudflare | 1.1.1.1 |
+| google1 | 8.8.8.8 |
+| google2 | 8.8.4.4 |
+| he | 74.82.42.42 |
+| opendns1 | 208.67.222.222 |
+| opendns2 | 208.67.220.220 |
+| quad9 | 9.9.9.9 |
+
+
+```
+dns -r "cloudflare" a golang.com    
+{
+    "question": [
+        {
+            "name": "golang.com.",
+            "type": "A",
+            "class": "IN"
+        }
+    ],
+    "answer": [
+        {
+            "name": "golang.com.",
+            "type": "A",
+            "class": "IN",
+            "ttl": 300,
+            "rdlength": 4,
+            "rdata": "172.217.19.145"
+        }
+    ]
+}
+```
