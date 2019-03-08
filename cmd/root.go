@@ -31,9 +31,10 @@ var resolver string
 var rootCmd = &cobra.Command{
 	Use:   "dns",
 	Short: "dns is a CLI for DNS-LG API.",
-	Long: `dns is a CLI for DNS-LG API.`,
+	Long:  `dns is a CLI for DNS-LG API.`,
 }
 
+// Execute root command
 func Execute() {
 	if err := rootCmd.Execute(); err != nil {
 		fmt.Println(err)

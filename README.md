@@ -1,8 +1,8 @@
-[![Build Status](https://travis-ci.org/mxssl/dns.svg?branch=master)](https://travis-ci.org/mxssl/dns)
+# dns
 
-dns is a simple CLI tool for [DNS-LG](http://www.dns-lg.com)
+`dns` is a simple CLI tool for [DNS-LG API](http://www.dns-lg.com)
 
-# Install
+## Install
 
 ## Option 1
 
@@ -168,7 +168,9 @@ dns a mxssl.github.com
 
 ## Resolver
 
-You can you different resolvers:
+`google1` is used by default
+
+You can use these resolvers:
 
 | Name | IP |
 |---|---|
