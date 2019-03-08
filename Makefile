@@ -18,9 +18,23 @@ dep:
 
 # Cross compilation
 build-linux:
-	env GOOS=linux GOARCH=amd64 go build -o ${BINARY_NAME}-linux-amd64
+	env GOOS=linux \
+	GOARCH=amd64 \
+	go build \
+	-o ${BINARY_NAME}-linux-amd64
 build-darwin:
-	env GOOS=darwin GOARCH=amd64 go build -o ${BINARY_NAME}-darwin-amd64
+	env GOOS=darwin \
+	GOARCH=amd64 \
+	go build \
+	-o ${BINARY_NAME}-darwin-amd64
 build-windows:
-	env GOOS=windows GOARCH=amd64 go build -o ${BINARY_NAME}-windows-amd64
+	env GOOS=windows \
+	GOARCH=amd64 \
+	go build \
+	-o ${BINARY_NAME}-windows-amd64
 
+release-dry:
+	goreleaser release --rm-dist --snapshot --skip-publish
+
+release:
+	goreleaser release --rm-dist

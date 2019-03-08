@@ -1,0 +1,3 @@
+9e8c8fbd0e9c131aba1144bc24a65c7e400c94d66e8d258fa6eead2cd6897f76  dns_v0.0.1_Linux_x86_64.tar.gz
+ced8e7a7d756b6ef165c5643cb49c0c78199ba88666e687c341eb91ffbd7a4e9  dns_v0.0.1_Windows_x86_64.tar.gz
+e84e00872323daec7affbf189bed4b57b0699cd473206e74143f3bbb4d3fe416  dns_v0.0.1_Darwin_x86_64.tar.gz
