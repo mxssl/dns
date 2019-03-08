@@ -4,42 +4,53 @@ dns is a simple CLI tool for [DNS-LG](http://www.dns-lg.com)
 
 # Install
 
-### Option 1
+## Option 1
 
-#### Compile
+### Compile
 
-```
+```bash
 mkdir -p ~/go/src/github.com/mxssl/dns
 cd ~/go/src/github.com/mxssl/dns
 git clone https://github.com/mxssl/dns.git .
-dep ensure
 go build -o dns
 mv dns /bin/dns
 chmod +x /bin/dns
 ```
 
-### Option 2
+## Option 2
 
-#### Download compiled binary
+### Download compiled binary
 
-Linux: https://github.com/mxssl/dns/releases/download/v0.0.1/dns-linux-amd64
+[Linux](https://github.com/mxssl/dns/releases/download/0.0.2/dns_0.0.2_Linux_x86_64.tar.gz)
 
-Windows: https://github.com/mxssl/dns/releases/download/v0.0.1/dns-windows-amd64.exe
+[Windows](https://github.com/mxssl/dns/releases/download/0.0.2/dns_0.0.2_Windows_x86_64.tar.gz)
 
-MacOS: https://github.com/mxssl/dns/releases/download/v0.0.1/dns-darwin-amd64
+[MacOS](https://github.com/mxssl/dns/releases/download/0.0.2/dns_0.0.2_Darwin_x86_64.tar.gz)
 
-#### Example
+### Examples
 
+Linux:
+
+```bash
+wget https://github.com/mxssl/dns/releases/download/0.0.2/dns_0.0.2_Linux_x86_64.tar.gz
+tar zvxf dns_0.0.2_Linux_x86_64.tar.gz
+cp dns /bin/dns
+chmod +x /bin/dns
 ```
-# wget https://github.com/mxssl/dns/releases/download/v0.0.1/dns-linux-amd64
-# cp dns-linux-amd64 /bin/dns
-# chmod +x /bin/dns
+
+MacOS
+
+```bash
+wget https://github.com/mxssl/dns/releases/download/0.0.2/dns_0.0.2_Darwin_x86_64.tar.gz
+tar zvxf dns_0.0.2_Darwin_x86_64.tar.gz
+cp dns /usr/local/bin/dns
+chmod +x /usr/local/bin/dns
 ```
 
-# Usage
+## Usage
 
-```
-# dns
+```bash
+dns
 dns is a CLI for DNS-LG API.
 
 Usage:
@@ -91,8 +102,8 @@ Use "dns [command] --help" for more information about a command.
 
 ## Example
 
-```
-# dns a mxssl.github.com
+```bash
+dns a mxssl.github.com
 {
     "question": [
         {
@@ -169,9 +180,8 @@ You can you different resolvers:
 | opendns2 | 208.67.220.220 |
 | quad9 | 9.9.9.9 |
 
-
-```
-dns -r cloudflare a golang.com    
+```bash
+dns -r cloudflare a golang.com
 {
     "question": [
         {
