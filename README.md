@@ -1,5 +1,3 @@
-# DNS-LG SHUTDOWN API. THIS APP IS DEPRECATED :(
-
 [![Build Status](https://travis-ci.org/mxssl/dns.svg?branch=master)](https://travis-ci.org/mxssl/dns)
 
 dns is a simple CLI tool for [DNS-LG](http://www.dns-lg.com)
