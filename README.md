@@ -8,18 +8,18 @@
 
 ### Download compiled binary
 
-[Linux](https://github.com/mxssl/dns/releases/download/0.0.4/dns_Linux_x86_64.tar.gz)
+[Linux](https://github.com/mxssl/dns/releases/download/0.0.5/dns_Linux_x86_64.tar.gz)
 
-[Windows](https://github.com/mxssl/dns/releases/download/0.0.4/dns_Windows_x86_64.tar.gz)
+[Windows](https://github.com/mxssl/dns/releases/download/0.0.5/dns_Windows_x86_64.tar.gz)
 
-[MacOS](https://github.com/mxssl/dns/releases/download/0.0.4/dns_Darwin_x86_64.tar.gz)
+[MacOS](https://github.com/mxssl/dns/releases/download/0.0.5/dns_Darwin_x86_64.tar.gz)
 
 ### Examples
 
 Linux:
 
 ```bash
-wget https://github.com/mxssl/dns/releases/download/0.0.4/dns_Linux_x86_64.tar.gz
+wget https://github.com/mxssl/dns/releases/download/0.0.5/dns_Linux_x86_64.tar.gz
 tar zvxf dns_Linux_x86_64.tar.gz
 cp dns /usr/local/bin/dns
 chmod +x /usr/local/bin/dns
@@ -28,7 +28,7 @@ chmod +x /usr/local/bin/dns
 MacOS
 
 ```bash
-wget https://github.com/mxssl/dns/releases/download/0.0.4/dns_Darwin_x86_64.tar.gz
+wget https://github.com/mxssl/dns/releases/download/0.0.5/dns_Darwin_x86_64.tar.gz
 tar zvxf dns_Darwin_x86_64.tar.gz
 cp dns /usr/local/bin/dns
 chmod +x /usr/local/bin/dns
@@ -156,6 +156,6 @@ dns -r cloudflare a golang.com
 docker container \
   run \
   --rm \
-  mxssl/dns:0.0.4 \
+  mxssl/dns:0.0.5 \
   dns a golang.com
 ```

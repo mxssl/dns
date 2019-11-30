@@ -1,0 +1,6 @@
+screen.png
+.goreleaser.yml
+LICENSE
+README.md
+.git
+dist/
