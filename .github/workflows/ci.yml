@@ -26,10 +26,3 @@ jobs:
         run: apk add --no-cache make
       - name: Build
         run: make build
-
-  docker-build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v1
-      - name: Build
-        run: docker build --tag mxssl/dns .
