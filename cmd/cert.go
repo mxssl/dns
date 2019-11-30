@@ -26,7 +26,7 @@ var certCmd = &cobra.Command{
 	Long: "Get Certificate (CERT records)",
 	Args: cobra.ExactArgs(1),
 	Run: func(cmd *cobra.Command, args []string) {
-		queries.GetQ(resolver, "cert", args[0])
+		queries.GetQ(resolver, "cert", args[0], raw)
 	},
 }
 

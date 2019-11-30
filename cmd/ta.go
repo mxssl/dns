@@ -26,7 +26,7 @@ var taCmd = &cobra.Command{
 	Long: "Get DNSSEC Trust Authorities (TA records)",
 	Args: cobra.ExactArgs(1),
 	Run: func(cmd *cobra.Command, args []string) {
-		queries.GetQ(resolver, "ta", args[0])
+		queries.GetQ(resolver, "ta", args[0], raw)
 	},
 }
 

@@ -26,7 +26,7 @@ var dnameCmd = &cobra.Command{
 	Long: "Get Delegation name (DNAME records)",
 	Args: cobra.ExactArgs(1),
 	Run: func(cmd *cobra.Command, args []string) {
-		queries.GetQ(resolver, "dname", args[0])
+		queries.GetQ(resolver, "dname", args[0], raw)
 	},
 }
 

@@ -26,7 +26,7 @@ var dnskeyCmd = &cobra.Command{
 	Long: "Get DNS Key record (DNSKEY records)",
 	Args: cobra.ExactArgs(1),
 	Run: func(cmd *cobra.Command, args []string) {
-		queries.GetQ(resolver, "dnskey", args[0])
+		queries.GetQ(resolver, "dnskey", args[0], raw)
 	},
 }
 

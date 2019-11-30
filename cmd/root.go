@@ -27,6 +27,8 @@ var cfgFile string
 
 var resolver string
 
+var raw bool
+
 // rootCmd represents the base command when called without any subcommands
 var rootCmd = &cobra.Command{
 	Use:   "dns",
@@ -50,6 +52,11 @@ func init() {
 		"r",
 		"google1",
 		"Choice dns resolver")
+
+	rootCmd.PersistentFlags().BoolVar(&raw,
+		"raw",
+		false,
+		"Raw output without color")
 }
 
 func initConfig() {

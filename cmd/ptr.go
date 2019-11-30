@@ -26,7 +26,7 @@ var ptrCmd = &cobra.Command{
 	Long: "Get Pointer record (PTR records)",
 	Args: cobra.ExactArgs(1),
 	Run: func(cmd *cobra.Command, args []string) {
-		queries.GetQ(resolver, "ptr", args[0])
+		queries.GetQ(resolver, "ptr", args[0], raw)
 	},
 }
 

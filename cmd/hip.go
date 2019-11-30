@@ -26,7 +26,7 @@ var hipCmd = &cobra.Command{
 	Long: "Get Host Identity Protocol (HIP records)",
 	Args: cobra.ExactArgs(1),
 	Run: func(cmd *cobra.Command, args []string) {
-		queries.GetQ(resolver, "hip", args[0])
+		queries.GetQ(resolver, "hip", args[0], raw)
 	},
 }
 

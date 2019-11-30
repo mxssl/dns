@@ -26,7 +26,7 @@ var srvCmd = &cobra.Command{
 	Long: "Get Service Locator (SRV records)",
 	Args: cobra.ExactArgs(1),
 	Run: func(cmd *cobra.Command, args []string) {
-		queries.GetQ(resolver, "srv", args[0])
+		queries.GetQ(resolver, "srv", args[0], raw)
 	},
 }
 

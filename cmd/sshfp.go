@@ -26,7 +26,7 @@ var sshfpCmd = &cobra.Command{
 	Long: "Get SSH Public Key Fingerprint (SSHFP records)",
 	Args: cobra.ExactArgs(1),
 	Run: func(cmd *cobra.Command, args []string) {
-		queries.GetQ(resolver, "sshfp", args[0])
+		queries.GetQ(resolver, "sshfp", args[0], raw)
 	},
 }
 

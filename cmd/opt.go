@@ -26,7 +26,7 @@ var optCmd = &cobra.Command{
 	Long: "Get Option record (OPT records)",
 	Args: cobra.ExactArgs(1),
 	Run: func(cmd *cobra.Command, args []string) {
-		queries.GetQ(resolver, "opt", args[0])
+		queries.GetQ(resolver, "opt", args[0], raw)
 	},
 }
 

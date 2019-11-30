@@ -26,7 +26,7 @@ var rptr6Cmd = &cobra.Command{
 	Long: "Get reverse (PTR) record from IPv4 addresses",
 	Args: cobra.ExactArgs(1),
 	Run: func(cmd *cobra.Command, args []string) {
-		queries.GetRptr(resolver, args[0])
+		queries.GetRptr(resolver, args[0], raw)
 	},
 }
 

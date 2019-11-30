@@ -1,6 +1,10 @@
 BINARY_NAME=dns
+CURRENT_DIR=$(shell pwd)
+TAG=$(shell git name-rev --tags --name-only $(shell git rev-parse HEAD))
+DOCKER_REGISTRY=mxssl
+export GO111MODULE=on
 
-.PHONY: all build clean test dep build-linux build-darwin build-windows
+.PHONY: all build clean test build-linux build-darwin build-windows github-release-dry github-release docker-release
 
 all: test build
 
@@ -10,11 +14,8 @@ build:
 clean:
 	rm -f ${BINARY_NAME}
 
-test:
+lint:
 	golangci-lint run -v
-
-dep:
-	dep ensure
 
 # Cross compilation
 build-linux:
@@ -33,8 +34,16 @@ build-windows:
 	go build \
 	-o ${BINARY_NAME}-windows-amd64
 
-release-dry:
+github-release-dry:
+	@echo "TAG: ${TAG}"
 	goreleaser release --rm-dist --snapshot --skip-publish
 
-release:
+github-release:
+	@echo "TAG: ${TAG}"
 	goreleaser release --rm-dist
+
+docker-release:
+	@echo "Registry: ${DOCKER_REGISTRY}"
+	@echo "TAG: ${TAG}"
+	docker build --tag ${DOCKER_REGISTRY}/${BINARY_NAME}:${TAG} .
+	docker push ${DOCKER_REGISTRY}/${BINARY_NAME}:${TAG}

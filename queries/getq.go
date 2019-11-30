@@ -2,15 +2,20 @@ package queries
 
 import (
 	"fmt"
-	"net/http"
 	"io/ioutil"
+	"net/http"
+
+	"github.com/mxssl/dns/output"
 )
 
+// APIURL is DNS-LG endpoint
 var APIURL = "http://www.dns-lg.com"
 
+// Resolver is what resolver will we use
 var Resolver string
 
-func GetQ(resolver string, queryType string, domain string) {
+// GetQ is used for http queries
+func GetQ(resolver string, queryType string, domain string, raw bool) {
 	url := fmt.Sprintf(APIURL + "/" + resolver + "/" + domain + "/" + queryType)
 
 	response, err := http.Get(url)
@@ -24,5 +29,5 @@ func GetQ(resolver string, queryType string, domain string) {
 		fmt.Println(err)
 	}
 
-	fmt.Println(string(content))
+	output.Print(content, raw)
 }

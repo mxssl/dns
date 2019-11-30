@@ -26,7 +26,7 @@ var locCmd = &cobra.Command{
 	Long: "Get Location record (LOC records)",
 	Args: cobra.ExactArgs(1),
 	Run: func(cmd *cobra.Command, args []string) {
-		queries.GetQ(resolver, "loc", args[0])
+		queries.GetQ(resolver, "loc", args[0], raw)
 	},
 }
 

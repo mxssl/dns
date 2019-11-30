@@ -26,7 +26,7 @@ var mxCmd = &cobra.Command{
 	Long: "Get Mail Exchange record (MX records)",
 	Args: cobra.ExactArgs(1),
 	Run: func(cmd *cobra.Command, args []string) {
-		queries.GetQ(resolver, "mx", args[0])
+		queries.GetQ(resolver, "mx", args[0], raw)
 	},
 }
 

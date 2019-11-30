@@ -26,7 +26,7 @@ var dsCmd = &cobra.Command{
 	Long: "Get Delegation Signer (DS records)",
 	Args: cobra.ExactArgs(1),
 	Run: func(cmd *cobra.Command, args []string) {
-		queries.GetQ(resolver, "ds", args[0])
+		queries.GetQ(resolver, "ds", args[0], raw)
 	},
 }
 

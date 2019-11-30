@@ -2,47 +2,34 @@
 
 `dns` is a simple CLI tool for [DNS-LG API](http://www.dns-lg.com)
 
+![screen](./screen.png)
+
 ## Install
-
-## Option 1
-
-### Compile
-
-```bash
-mkdir -p ~/go/src/github.com/mxssl/dns
-cd ~/go/src/github.com/mxssl/dns
-git clone https://github.com/mxssl/dns.git .
-go build -o dns
-mv dns /bin/dns
-chmod +x /bin/dns
-```
-
-## Option 2
 
 ### Download compiled binary
 
-[Linux](https://github.com/mxssl/dns/releases/download/0.0.2/dns_0.0.2_Linux_x86_64.tar.gz)
+[Linux](https://github.com/mxssl/dns/releases/download/0.0.3/dns_Linux_x86_64.tar.gz)
 
-[Windows](https://github.com/mxssl/dns/releases/download/0.0.2/dns_0.0.2_Windows_x86_64.tar.gz)
+[Windows](https://github.com/mxssl/dns/releases/download/0.0.3/dns_Windows_x86_64.tar.gz)
 
-[MacOS](https://github.com/mxssl/dns/releases/download/0.0.2/dns_0.0.2_Darwin_x86_64.tar.gz)
+[MacOS](https://github.com/mxssl/dns/releases/download/0.0.3/dns_Darwin_x86_64.tar.gz)
 
 ### Examples
 
 Linux:
 
 ```bash
-wget https://github.com/mxssl/dns/releases/download/0.0.2/dns_0.0.2_Linux_x86_64.tar.gz
-tar zvxf dns_0.0.2_Linux_x86_64.tar.gz
-cp dns /bin/dns
-chmod +x /bin/dns
+wget https://github.com/mxssl/dns/releases/download/0.0.3/dns_Linux_x86_64.tar.gz
+tar zvxf dns_Linux_x86_64.tar.gz
+cp dns /usr/local/bin/dns
+chmod +x /usr/local/bin/dns
 ```
 
 MacOS
 
 ```bash
-wget https://github.com/mxssl/dns/releases/download/0.0.2/dns_0.0.2_Darwin_x86_64.tar.gz
-tar zvxf dns_0.0.2_Darwin_x86_64.tar.gz
+wget https://github.com/mxssl/dns/releases/download/0.0.3/dns_Darwin_x86_64.tar.gz
+tar zvxf dns_Darwin_x86_64.tar.gz
 cp dns /usr/local/bin/dns
 chmod +x /usr/local/bin/dns
 ```
@@ -50,7 +37,6 @@ chmod +x /usr/local/bin/dns
 ## Usage
 
 ```bash
-dns
 dns is a CLI for DNS-LG API.
 
 Usage:
@@ -94,76 +80,35 @@ Available Commands:
 
 Flags:
   -h, --help              help for dns
+      --raw               Raw output without color
   -r, --resolver string   Choice dns resolver (default "google1")
 
-Use "dns [command] --help" for more information about a command.
-
+Use "dns [command] --help" for more information about a command
 ```
 
 ## Example
 
-```bash
-dns a mxssl.github.com
+```sh
+dns a golang.com
 {
     "question": [
         {
-            "name": "mxssl.github.com.",
+            "name": "golang.com.",
             "type": "A",
             "class": "IN"
         }
     ],
     "answer": [
         {
-            "name": "mxssl.github.com.",
-            "type": "CNAME",
-            "class": "IN",
-            "ttl": 3599,
-            "rdlength": 18,
-            "rdata": "github.github.io."
-        },
-        {
-            "name": "github.github.io.",
-            "type": "CNAME",
-            "class": "IN",
-            "ttl": 3599,
-            "rdlength": 27,
-            "rdata": "sni.github.map.fastly.net."
-        },
-        {
-            "name": "sni.github.map.fastly.net.",
+            "name": "golang.com.",
             "type": "A",
             "class": "IN",
-            "ttl": 3599,
+            "ttl": 299,
             "rdlength": 4,
-            "rdata": "185.199.108.153"
-        },
-        {
-            "name": "sni.github.map.fastly.net.",
-            "type": "A",
-            "class": "IN",
-            "ttl": 3599,
-            "rdlength": 4,
-            "rdata": "185.199.109.153"
-        },
-        {
-            "name": "sni.github.map.fastly.net.",
-            "type": "A",
-            "class": "IN",
-            "ttl": 3599,
-            "rdlength": 4,
-            "rdata": "185.199.110.153"
-        },
-        {
-            "name": "sni.github.map.fastly.net.",
-            "type": "A",
-            "class": "IN",
-            "ttl": 3599,
-            "rdlength": 4,
-            "rdata": "185.199.111.153"
+            "rdata": "216.58.198.81"
         }
     ]
 }
-
 ```
 
 ## Resolver
@@ -182,7 +127,7 @@ You can use these resolvers:
 | opendns2 | 208.67.220.220 |
 | quad9 | 9.9.9.9 |
 
-```bash
+```sh
 dns -r cloudflare a golang.com
 {
     "question": [
@@ -197,10 +142,20 @@ dns -r cloudflare a golang.com
             "name": "golang.com.",
             "type": "A",
             "class": "IN",
-            "ttl": 300,
+            "ttl": 47,
             "rdlength": 4,
-            "rdata": "172.217.19.145"
+            "rdata": "172.217.168.49"
         }
     ]
 }
+```
+
+## Docker
+
+```sh
+docker container \
+  run \
+  --rm \
+  mxssl/dns:v0.0.3 \
+  dns a golang.com
 ```

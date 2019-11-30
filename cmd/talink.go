@@ -26,7 +26,7 @@ var talinkCmd = &cobra.Command{
 	Long: "Get Trust Anchor LINK (TALINK records)",
 	Args: cobra.ExactArgs(1),
 	Run: func(cmd *cobra.Command, args []string) {
-		queries.GetQ(resolver, "talink", args[0])
+		queries.GetQ(resolver, "talink", args[0], raw)
 	},
 }
 

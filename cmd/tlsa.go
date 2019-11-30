@@ -26,7 +26,7 @@ var tlsaCmd = &cobra.Command{
 	Long: "Get TLSA records",
 	Args: cobra.ExactArgs(1),
 	Run: func(cmd *cobra.Command, args []string) {
-		queries.GetQ(resolver, "tlsa", args[0])
+		queries.GetQ(resolver, "tlsa", args[0], raw)
 	},
 }
 

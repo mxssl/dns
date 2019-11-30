@@ -26,7 +26,7 @@ var spfCmd = &cobra.Command{
 	Long: "Get Sender Policy Framework (SPF records)",
 	Args: cobra.ExactArgs(1),
 	Run: func(cmd *cobra.Command, args []string) {
-		queries.GetQ(resolver, "spf", args[0])
+		queries.GetQ(resolver, "spf", args[0], raw)
 	},
 }
 

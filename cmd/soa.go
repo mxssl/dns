@@ -26,7 +26,7 @@ var soaCmd = &cobra.Command{
 	Long: "Get Start of Authority (SOA record)",
 	Args: cobra.ExactArgs(1),
 	Run: func(cmd *cobra.Command, args []string) {
-		queries.GetQ(resolver, "soa", args[0])
+		queries.GetQ(resolver, "soa", args[0], raw)
 	},
 }
 

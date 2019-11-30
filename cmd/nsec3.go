@@ -26,7 +26,7 @@ var nsec3Cmd = &cobra.Command{
 	Long: "Get NSEC record version 3 (NSEC3 records)",
 	Args: cobra.ExactArgs(1),
 	Run: func(cmd *cobra.Command, args []string) {
-		queries.GetQ(resolver, "nsec3", args[0])
+		queries.GetQ(resolver, "nsec3", args[0], raw)
 	},
 }
 

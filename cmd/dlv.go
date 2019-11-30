@@ -26,7 +26,7 @@ var dlvCmd = &cobra.Command{
 	Long: "Get DNSSEC Lookaside Validation record (DLV records)",
 	Args: cobra.ExactArgs(1),
 	Run: func(cmd *cobra.Command, args []string) {
-		queries.GetQ(resolver, "dlv", args[0])
+		queries.GetQ(resolver, "dlv", args[0], raw)
 	},
 }
 

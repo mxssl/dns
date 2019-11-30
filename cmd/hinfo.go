@@ -26,7 +26,7 @@ var hinfoCmd = &cobra.Command{
 	Long: "Get Host Information (HINFO records)",
 	Args: cobra.ExactArgs(1),
 	Run: func(cmd *cobra.Command, args []string) {
-		queries.GetQ(resolver, "hinfo", args[0])
+		queries.GetQ(resolver, "hinfo", args[0], raw)
 	},
 }
 

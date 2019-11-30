@@ -26,7 +26,7 @@ var kxCmd = &cobra.Command{
 	Long: "Get Key eXchanger record (KX records)",
 	Args: cobra.ExactArgs(1),
 	Run: func(cmd *cobra.Command, args []string) {
-		queries.GetQ(resolver, "kx", args[0])
+		queries.GetQ(resolver, "kx", args[0], raw)
 	},
 }
 

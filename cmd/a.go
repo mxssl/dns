@@ -26,7 +26,7 @@ var aCmd = &cobra.Command{
 	Long: "Get Host Address (A records)",
 	Args: cobra.ExactArgs(1),
 	Run: func(cmd *cobra.Command, args []string) {
-		queries.GetQ(resolver, "a", args[0])
+		queries.GetQ(resolver, "a", args[0], raw)
 	},
 }
 

@@ -26,7 +26,7 @@ var naptrCmd = &cobra.Command{
 	Long: "Get Name Authority Pointer (NAPTR records)",
 	Args: cobra.ExactArgs(1),
 	Run: func(cmd *cobra.Command, args []string) {
-		queries.GetQ(resolver, "naptr", args[0])
+		queries.GetQ(resolver, "naptr", args[0], raw)
 	},
 }
 

@@ -26,7 +26,7 @@ var dhcidCmd = &cobra.Command{
 	Long: "Get DHCP Identifier (DHCID records)",
 	Args: cobra.ExactArgs(1),
 	Run: func(cmd *cobra.Command, args []string) {
-		queries.GetQ(resolver, "dhcid", args[0])
+		queries.GetQ(resolver, "dhcid", args[0], raw)
 	},
 }
 

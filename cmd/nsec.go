@@ -26,7 +26,7 @@ var nsecCmd = &cobra.Command{
 	Long: "Get Next-Secure record (NSEC records)",
 	Args: cobra.ExactArgs(1),
 	Run: func(cmd *cobra.Command, args []string) {
-		queries.GetQ(resolver, "nsec", args[0])
+		queries.GetQ(resolver, "nsec", args[0], raw)
 	},
 }
 
