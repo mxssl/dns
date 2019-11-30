@@ -2,7 +2,7 @@
 
 `dns` is a simple CLI tool for [DNS-LG API](http://www.dns-lg.com)
 
-![screen](./screen.png)
+<img src="./screen.png" alt="drawing" width="400"/>
 
 ## Install
 
