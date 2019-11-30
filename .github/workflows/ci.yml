@@ -11,4 +11,5 @@ jobs:
       - uses: actions/checkout@v1
       - name: Build
         run: |
+          apk add --no-cache make
           make build
