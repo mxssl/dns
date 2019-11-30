@@ -9,7 +9,7 @@ export GO111MODULE=on
 all: test build
 
 build:
-	go build -o ${BINARY_NAME} -v
+	go build -mod=vendor -o ${BINARY_NAME} -v
 
 clean:
 	rm -f ${BINARY_NAME}

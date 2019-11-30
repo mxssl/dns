@@ -1,0 +1,14 @@
+name: "CI"
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container: 
+      image: "golang:1.13.4-alpine3.10"
+    steps:
+      - uses: actions/checkout@v1
+      - name: Build
+        run: |
+          make build
