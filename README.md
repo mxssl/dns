@@ -156,6 +156,6 @@ dns -r cloudflare a golang.com
 docker container \
   run \
   --rm \
-  mxssl/dns:v0.0.3 \
+  mxssl/dns:0.0.3 \
   dns a golang.com
 ```
