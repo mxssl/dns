@@ -8,18 +8,18 @@
 
 ### Download compiled binary
 
-[Linux](https://github.com/mxssl/dns/releases/download/0.0.7/dns_Linux_x86_64.tar.gz)
+[Linux](https://github.com/mxssl/dns/releases/download/0.0.8/dns_Linux_x86_64.tar.gz)
 
-[Windows](https://github.com/mxssl/dns/releases/download/0.0.7/dns_Windows_x86_64.tar.gz)
+[Windows](https://github.com/mxssl/dns/releases/download/0.0.8/dns_Windows_x86_64.tar.gz)
 
-[MacOS](https://github.com/mxssl/dns/releases/download/0.0.7/dns_Darwin_x86_64.tar.gz)
+[MacOS](https://github.com/mxssl/dns/releases/download/0.0.8/dns_Darwin_x86_64.tar.gz)
 
 ### Examples
 
 Linux:
 
 ```bash
-wget https://github.com/mxssl/dns/releases/download/0.0.7/dns_Linux_x86_64.tar.gz
+wget https://github.com/mxssl/dns/releases/download/0.0.8/dns_Linux_x86_64.tar.gz
 tar zvxf dns_Linux_x86_64.tar.gz
 cp dns /usr/local/bin/dns
 chmod +x /usr/local/bin/dns
@@ -28,7 +28,7 @@ chmod +x /usr/local/bin/dns
 MacOS
 
 ```bash
-wget https://github.com/mxssl/dns/releases/download/0.0.7/dns_Darwin_x86_64.tar.gz
+wget https://github.com/mxssl/dns/releases/download/0.0.8/dns_Darwin_x86_64.tar.gz
 tar zvxf dns_Darwin_x86_64.tar.gz
 cp dns /usr/local/bin/dns
 chmod +x /usr/local/bin/dns
@@ -158,4 +158,21 @@ docker container \
   --rm \
   mxssl/dns:0.0.7 \
   dns a golang.com
+```
+
+## Development
+
+[Mage](https://github.com/magefile/mage) is used as an alternative to `make`.
+
+```sh
+mage -l
+Targets:
+  build                  the app
+  clean                  delete compiled binary
+  dockerBuild            build container with latest tag
+  dockerRelease          build and push container to the registry
+  dockerTestRun          test run latest container
+  gitHubRelease          run goreleaser
+  gitHubReleaseDryRun    goreleaser dry run
+  lint                   the app
 ```

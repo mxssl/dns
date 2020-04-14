@@ -6,14 +6,28 @@ on:
     - '*'
 
 jobs:
+  lint:
+    runs-on: ubuntu-latest
+    container: 
+      image: golangci/golangci-lint:v1.20-alpine
+      options: -w /go/src/github.com/mxssl/dns
+    steps:
+      - uses: actions/checkout@v1
+      - name: Install dependencies
+        run: ci/install_mage_linux.sh
+      - name: Lint
+        run: mage lint
+
   docker-release:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
+      - name: Install dependencies
+        run: ci/install_mage_linux.sh
       - name: Docker login
         run: docker login --username ${{ secrets.DOCKER_LOGIN }} --password ${{ secrets.DOCKER_PASSWORD }}
       - name: Docker release
-        run: make docker-release
+        run: mage dockerRelease
 
   github-release:
     runs-on: ubuntu-latest
@@ -22,11 +36,11 @@ jobs:
       - name: Set up Go
         uses: actions/setup-go@master
         with:
-          go-version: 1.13.4
+          go-version: 1.14.2
       - name: Run GoReleaser
         uses: goreleaser/goreleaser-action@v1
         with:
-          version: v0.123.3
+          version: v0.131.1
           args: release --rm-dist
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
