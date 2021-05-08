@@ -19,7 +19,7 @@
 Linux:
 
 ```bash
-wget https://github.com/mxssl/dns/releases/download/0.0.10/dns_Linux_x86_64.tar.gz
+wget https://github.com/mxssl/dns/releases/download/1.0.0/dns_Linux_x86_64.tar.gz
 tar zvxf dns_Linux_x86_64.tar.gz
 cp dns /usr/local/bin/dns
 chmod +x /usr/local/bin/dns
@@ -28,7 +28,7 @@ chmod +x /usr/local/bin/dns
 MacOS
 
 ```bash
-wget https://github.com/mxssl/dns/releases/download/0.0.10/dns_Darwin_x86_64.tar.gz
+wget https://github.com/mxssl/dns/releases/download/1.0.0/dns_Darwin_x86_64.tar.gz
 tar zvxf dns_Darwin_x86_64.tar.gz
 cp dns /usr/local/bin/dns
 chmod +x /usr/local/bin/dns
@@ -156,7 +156,7 @@ dns -r cloudflare a golang.com
 docker container \
   run \
   --rm \
-  mxssl/dns:0.0.10 \
+  mxssl/dns:1.0.0 \
   dns a golang.com
 ```
 
