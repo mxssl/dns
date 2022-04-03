@@ -12,13 +12,15 @@ builds:
     - amd64
 archives:
   - name_template: "{{ .ProjectName }}_{{ .Os }}_{{ .Arch }}"
-    files:
-    - none*
     replacements:
       darwin: Darwin
       linux: Linux
       windows: Windows
       amd64: x86_64
+    format: tar.xz
+    format_overrides:
+      - goos: windows
+        format: zip
 checksum:
   name_template: 'checksums.txt'
 snapshot:
