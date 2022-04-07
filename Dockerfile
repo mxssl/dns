@@ -1,4 +1,4 @@
-FROM golang:1.16.4-alpine3.13 as builder
+FROM golang:1.18.0-alpine3.15 as builder
 
 ENV GO111MODULE=on
 
@@ -15,10 +15,10 @@ RUN apk add --no-cache \
 RUN CGO_ENABLED=0 \
   GOOS=`go env GOHOSTOS` \
   GOARCH=`go env GOHOSTARCH` \
-  go build -v -mod=vendor -o dns
+  go build -v -o dns
 
 # Copy compiled binary to clear Alpine Linux image
-FROM alpine:3.13.5
+FROM alpine:3.15.4
 WORKDIR /
 RUN apk add --no-cache ca-certificates
 COPY --from=builder /go/src/github.com/mxssl/dns/dns /usr/local/bin/dns
