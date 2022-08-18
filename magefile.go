@@ -80,7 +80,9 @@ func DockerRelease() error {
 
 	containerWithTag := fmt.Sprintf(DockerRegistry + "/" + BinaryName + ":" + tag)
 
-	if err := sh.RunV("docker", "build", "--build-arg", tag, "--tag", containerWithTag, "."); err != nil {
+	ver := fmt.Sprintf("VERSION=" + tag)
+
+	if err := sh.RunV("docker", "build", "--build-arg", ver, "--tag", containerWithTag, "."); err != nil {
 		return err
 	}
 
