@@ -2,7 +2,7 @@ package queries
 
 import (
 	"fmt"
-	"io/ioutil"
+	"io"
 	"net/http"
 
 	"github.com/mxssl/dns/output"
@@ -18,7 +18,7 @@ func GetRptr(resolver string, ip string, raw bool) {
 	}
 	defer response.Body.Close()
 
-	content, err := ioutil.ReadAll(response.Body)
+	content, err := io.ReadAll(response.Body)
 	if err != nil {
 		fmt.Println(err)
 	}

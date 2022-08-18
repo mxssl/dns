@@ -1,3 +1,4 @@
+//go:build mage
 // +build mage
 
 package main
@@ -17,7 +18,7 @@ var DockerRegistry = "mxssl"
 
 // Build the app
 func Build() error {
-	if err := sh.Run("go", "build", "-v", "-mod=vendor", "-o", BinaryName); err != nil {
+	if err := sh.Run("go", "build", "-v", "-o", BinaryName); err != nil {
 		return err
 	}
 	fmt.Printf("%s is successfully built\n", BinaryName)
@@ -26,7 +27,7 @@ func Build() error {
 
 // Lint the app
 func Lint() error {
-	if err := sh.Run("golangci-lint", "run", "-v"); err != nil {
+	if err := sh.RunV("golangci-lint", "run"); err != nil {
 		return err
 	}
 	return nil
