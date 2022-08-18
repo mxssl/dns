@@ -10,6 +10,8 @@ builds:
     - windows
   goarch:
     - amd64
+  ldflags:
+    -X github.com/mxssl/dns/cmd.version={{ .Version }}
 archives:
   - name_template: "{{ .ProjectName }}_{{ .Os }}_{{ .Arch }}"
     files:

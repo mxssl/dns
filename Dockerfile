@@ -1,6 +1,7 @@
 FROM golang:1.19.0-alpine3.15 as builder
 
 ENV GO111MODULE=on
+ARG VERSION=dev
 
 WORKDIR /go/src/github.com/mxssl/dns
 COPY . .
@@ -12,10 +13,11 @@ RUN apk add --no-cache \
   git
 
 # Compile binary
+
 RUN CGO_ENABLED=0 \
   GOOS=`go env GOHOSTOS` \
   GOARCH=`go env GOHOSTARCH` \
-  go build -v -o dns
+  go build -v -o dns -ldflags "-X github.com/mxssl/dns/cmd.version=$VERSION"
 
 # Copy compiled binary to clear Alpine Linux image
 FROM alpine:3.16.2
