@@ -78,9 +78,9 @@ func DockerRelease() error {
 	}
 	fmt.Printf("Git tag: %s\n", tag)
 
-	containerWithTag := fmt.Sprintf(DockerRegistry + "/" + BinaryName + ":" + tag)
+	containerWithTag := fmt.Sprintf("%s/%s:%s", DockerRegistry, BinaryName, tag)
 
-	ver := fmt.Sprintf("VERSION=" + tag)
+	ver := fmt.Sprintf("VERSION=%s", tag)
 
 	if err := sh.RunV("docker", "build", "--build-arg", ver, "--tag", containerWithTag, "."); err != nil {
 		return err
@@ -122,7 +122,7 @@ func GitHubRelease() error {
 
 	_, ok := os.LookupEnv("GITHUB_TOKEN")
 	if !ok {
-		fmt.Println("env variable GITHUB_TOKEN is not set\n")
+		fmt.Println("env variable GITHUB_TOKEN is not set")
 	}
 
 	if err := sh.RunV("goreleaser", "release", "--rm-dist"); err != nil {
