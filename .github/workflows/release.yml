@@ -30,7 +30,7 @@ jobs:
       - name: Docker login
         run: docker login --username ${{ secrets.DOCKER_LOGIN }} --password ${{ secrets.DOCKER_PASSWORD }}
       - name: dockerRelease
-        uses: magefile/mage-action@v1
+        uses: magefile/mage-action@v2
         with:
           version: latest
           args: dockerRelease
