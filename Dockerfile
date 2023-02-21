@@ -1,4 +1,4 @@
-FROM golang:1.19.3-alpine3.15 as builder
+FROM golang:1.20.1-alpine3.17 as builder
 
 ENV GO111MODULE=on
 ARG VERSION=dev
