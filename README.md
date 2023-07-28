@@ -122,45 +122,6 @@ Use "dns [command] --help" for more information about a command
 ## Example
 
 ```sh
-dns a github.com
-{
-    "question": [
-        {
-            "name": "github.com.",
-            "type": "A",
-            "class": "IN"
-        }
-    ],
-    "answer": [
-        {
-            "name": "github.com.",
-            "type": "A",
-            "class": "IN",
-            "ttl": 60,
-            "rdlength": 4,
-            "rdata": "140.82.113.4"
-        }
-    ]
-}
-```
-
-## Resolver
-
-`google1` is used by default
-
-You can use these resolvers:
-
-| Name | IP |
-|---|---|
-| cloudflare | 1.1.1.1 |
-| google1 | 8.8.8.8 |
-| google2 | 8.8.4.4 |
-| he | 74.82.42.42 |
-| opendns1 | 208.67.222.222 |
-| opendns2 | 208.67.220.220 |
-| quad9 | 9.9.9.9 |
-
-```bash
 dns a go.dev
 {
     "question": [
@@ -206,6 +167,22 @@ dns a go.dev
     ]
 }
 ```
+
+## Resolver
+
+`google1` is used by default
+
+You can use these resolvers:
+
+| Name | IP |
+|---|---|
+| cloudflare | 1.1.1.1 |
+| google1 | 8.8.8.8 |
+| google2 | 8.8.4.4 |
+| he | 74.82.42.42 |
+| opendns1 | 208.67.222.222 |
+| opendns2 | 208.67.220.220 |
+| quad9 | 9.9.9.9 |
 
 ## Docker
 
