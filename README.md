@@ -2,36 +2,69 @@
 
 `dns` is a simple CLI tool for [DNS-LG API](http://www.dns-lg.com)
 
-<img src="./screen.png" alt="drawing" width="400"/>
+```sh
+dns a github.com
+{
+    "question": [
+        {
+            "name": "github.com.",
+            "type": "A",
+            "class": "IN"
+        }
+    ],
+    "answer": [
+        {
+            "name": "github.com.",
+            "type": "A",
+            "class": "IN",
+            "ttl": 60,
+            "rdlength": 4,
+            "rdata": "140.82.113.4"
+        }
+    ]
+}
+```
 
 ## Install
 
 ### Download compiled binary
 
-[Linux](https://github.com/mxssl/dns/releases/download/1.0.5/dns_Linux_x86_64.tar.gz)
+[Linux amd64](https://github.com/mxssl/dns/releases/download/1.0.7/dns_Linux_x86_64.tar.gz)
 
-[Windows](https://github.com/mxssl/dns/releases/download/1.0.5/dns_Windows_x86_64.tar.gz)
+[MacOS amd64](https://github.com/mxssl/dns/releases/download/1.0.7/dns_darwin_amd64.tar.gz)
 
-[MacOS](https://github.com/mxssl/dns/releases/download/1.0.5/dns_Darwin_x86_64.tar.gz)
+[MacOS arm64](https://github.com/mxssl/dns/releases/download/1.0.7/dns_darwin_arm64.tar.gz)
 
 ### Examples
 
-Linux:
+Linux amd64:
 
 ```bash
-wget https://github.com/mxssl/dns/releases/download/1.0.5/dns_Linux_x86_64.tar.gz
-tar zvxf dns_Linux_x86_64.tar.gz
-cp dns /usr/local/bin/dns
+wget https://github.com/mxssl/dns/releases/download/1.0.7/dns_linux_amd64.tar.gz
+tar zvxf dns_linux_amd64.tar.gz
+mv dns /usr/local/bin/dns
 chmod +x /usr/local/bin/dns
+rm dns_linux_amd64.tar.gz
 ```
 
-MacOS
+MacOS amd64:
 
 ```bash
-wget https://github.com/mxssl/dns/releases/download/1.0.5/dns_Darwin_x86_64.tar.gz
-tar zvxf dns_Darwin_x86_64.tar.gz
-cp dns /usr/local/bin/dns
+wget https://github.com/mxssl/dns/releases/download/1.0.7/dns_darwin_amd64.tar.gz
+tar zvxf dns_darwin_amd64.tar.gz
+mv dns /usr/local/bin/dns
 chmod +x /usr/local/bin/dns
+rm dns_darwin_amd64.tar.gz
+```
+
+MacOS arm64:
+
+```bash
+wget https://github.com/mxssl/dns/releases/download/1.0.7/dns_darwin_arm64.tar.gz
+tar zvxf dns_darwin_arm64.tar.gz
+mv dns /usr/local/bin/dns
+chmod +x /usr/local/bin/dns
+rm dns_darwin_arm64.tar.gz
 ```
 
 ## Usage
@@ -89,23 +122,23 @@ Use "dns [command] --help" for more information about a command
 ## Example
 
 ```sh
-dns a golang.com
+dns a github.com
 {
     "question": [
         {
-            "name": "golang.com.",
+            "name": "github.com.",
             "type": "A",
             "class": "IN"
         }
     ],
     "answer": [
         {
-            "name": "golang.com.",
+            "name": "github.com.",
             "type": "A",
             "class": "IN",
-            "ttl": 299,
+            "ttl": 60,
             "rdlength": 4,
-            "rdata": "216.58.198.81"
+            "rdata": "140.82.113.4"
         }
     ]
 }
@@ -127,24 +160,48 @@ You can use these resolvers:
 | opendns2 | 208.67.220.220 |
 | quad9 | 9.9.9.9 |
 
-```sh
-dns -r cloudflare a golang.com
+```bash
+dns a go.dev
 {
     "question": [
         {
-            "name": "golang.com.",
+            "name": "go.dev.",
             "type": "A",
             "class": "IN"
         }
     ],
     "answer": [
         {
-            "name": "golang.com.",
+            "name": "go.dev.",
             "type": "A",
             "class": "IN",
-            "ttl": 47,
+            "ttl": 300,
             "rdlength": 4,
-            "rdata": "172.217.168.49"
+            "rdata": "216.239.34.21"
+        },
+        {
+            "name": "go.dev.",
+            "type": "A",
+            "class": "IN",
+            "ttl": 300,
+            "rdlength": 4,
+            "rdata": "216.239.32.21"
+        },
+        {
+            "name": "go.dev.",
+            "type": "A",
+            "class": "IN",
+            "ttl": 300,
+            "rdlength": 4,
+            "rdata": "216.239.36.21"
+        },
+        {
+            "name": "go.dev.",
+            "type": "A",
+            "class": "IN",
+            "ttl": 300,
+            "rdlength": 4,
+            "rdata": "216.239.38.21"
         }
     ]
 }
