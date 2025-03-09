@@ -20,7 +20,7 @@ RUN CGO_ENABLED=0 \
   go build -v -o dns -ldflags "-X github.com/mxssl/dns/cmd.version=$VERSION"
 
 # Copy compiled binary to clear Alpine Linux image
-FROM alpine:3.21.2
+FROM alpine:3.21.3
 WORKDIR /
 RUN apk add --no-cache ca-certificates
 COPY --from=builder /go/src/github.com/mxssl/dns/dns /usr/local/bin/dns
