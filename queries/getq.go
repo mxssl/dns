@@ -16,13 +16,17 @@ var Resolver string
 
 // GetQ is used for http queries
 func GetQ(resolver string, queryType string, domain string, raw bool) {
-	url := fmt.Sprintf(APIURL + "/" + resolver + "/" + domain + "/" + queryType)
+	url := fmt.Sprintf("%s/%s/%s/%s", APIURL, resolver, domain, queryType)
 
 	response, err := http.Get(url)
 	if err != nil {
 		fmt.Println(err)
 	}
-	defer response.Body.Close()
+	defer func() {
+		if err := response.Body.Close(); err != nil {
+			fmt.Println(err)
+		}
+	}()
 
 	content, err := io.ReadAll(response.Body)
 	if err != nil {
