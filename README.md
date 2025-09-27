@@ -29,18 +29,18 @@ dns a github.com
 
 ### Download compiled binary
 
-[Linux amd64](https://github.com/mxssl/dns/releases/download/1.0.7/dns_Linux_x86_64.tar.gz)
+[Linux amd64](https://github.com/mxssl/dns/releases/download/1.0.8/dns_Linux_x86_64.tar.gz)
 
-[MacOS amd64](https://github.com/mxssl/dns/releases/download/1.0.7/dns_darwin_amd64.tar.gz)
+[MacOS amd64](https://github.com/mxssl/dns/releases/download/1.0.8/dns_darwin_amd64.tar.gz)
 
-[MacOS arm64](https://github.com/mxssl/dns/releases/download/1.0.7/dns_darwin_arm64.tar.gz)
+[MacOS arm64](https://github.com/mxssl/dns/releases/download/1.0.8/dns_darwin_arm64.tar.gz)
 
 ### Examples
 
 Linux amd64:
 
 ```bash
-wget https://github.com/mxssl/dns/releases/download/1.0.7/dns_linux_amd64.tar.gz
+wget https://github.com/mxssl/dns/releases/download/1.0.8/dns_linux_amd64.tar.gz
 tar zvxf dns_linux_amd64.tar.gz
 mv dns /usr/local/bin/dns
 chmod +x /usr/local/bin/dns
@@ -50,7 +50,7 @@ rm dns_linux_amd64.tar.gz
 MacOS amd64:
 
 ```bash
-wget https://github.com/mxssl/dns/releases/download/1.0.7/dns_darwin_amd64.tar.gz
+wget https://github.com/mxssl/dns/releases/download/1.0.8/dns_darwin_amd64.tar.gz
 tar zvxf dns_darwin_amd64.tar.gz
 mv dns /usr/local/bin/dns
 chmod +x /usr/local/bin/dns
@@ -60,7 +60,7 @@ rm dns_darwin_amd64.tar.gz
 MacOS arm64:
 
 ```bash
-wget https://github.com/mxssl/dns/releases/download/1.0.7/dns_darwin_arm64.tar.gz
+wget https://github.com/mxssl/dns/releases/download/1.0.8/dns_darwin_arm64.tar.gz
 tar zvxf dns_darwin_arm64.tar.gz
 mv dns /usr/local/bin/dns
 chmod +x /usr/local/bin/dns
@@ -174,15 +174,15 @@ dns a go.dev
 
 You can use these resolvers:
 
-| Name | IP |
-|---|---|
-| cloudflare | 1.1.1.1 |
-| google1 | 8.8.8.8 |
-| google2 | 8.8.4.4 |
-| he | 74.82.42.42 |
-| opendns1 | 208.67.222.222 |
-| opendns2 | 208.67.220.220 |
-| quad9 | 9.9.9.9 |
+| Name       | IP             |
+| ---------- | -------------- |
+| cloudflare | 1.1.1.1        |
+| google1    | 8.8.8.8        |
+| google2    | 8.8.4.4        |
+| he         | 74.82.42.42    |
+| opendns1   | 208.67.222.222 |
+| opendns2   | 208.67.220.220 |
+| quad9      | 9.9.9.9        |
 
 ## Docker
 
@@ -190,7 +190,7 @@ You can use these resolvers:
 docker container \
   run \
   --rm \
-  mxssl/dns:1.0.5 \
+  mxssl/dns:v1.0.8 \
   dns a golang.com
 ```
 

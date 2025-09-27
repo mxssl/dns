@@ -1,4 +1,4 @@
-FROM golang:1.21.5-alpine3.17 as builder
+FROM golang:1.25.1-alpine3.22 as builder
 
 ENV GO111MODULE=on
 ARG VERSION=dev
@@ -20,7 +20,7 @@ RUN CGO_ENABLED=0 \
   go build -v -o dns -ldflags "-X github.com/mxssl/dns/cmd.version=$VERSION"
 
 # Copy compiled binary to clear Alpine Linux image
-FROM alpine:3.22.1
+FROM alpine:3.22
 WORKDIR /
 RUN apk add --no-cache ca-certificates
 COPY --from=builder /go/src/github.com/mxssl/dns/dns /usr/local/bin/dns
