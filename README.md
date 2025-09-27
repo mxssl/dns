@@ -29,18 +29,16 @@ dns a github.com
 
 ### Download compiled binary
 
-[Linux amd64](https://github.com/mxssl/dns/releases/download/v1.0.8/dns_Linux_x86_64.tar.gz)
-
-[MacOS amd64](https://github.com/mxssl/dns/releases/download/v1.0.8/dns_darwin_amd64.tar.gz)
-
-[MacOS arm64](https://github.com/mxssl/dns/releases/download/v1.0.8/dns_darwin_arm64.tar.gz)
+- [Linux amd64](https://github.com/mxssl/dns/releases/download/latest/dns_Linux_x86_64.tar.gz)
+- [MacOS amd64](https://github.com/mxssl/dns/releases/download/latest/dns_darwin_amd64.tar.gz)
+- [MacOS arm64](https://github.com/mxssl/dns/releases/download/latest/dns_darwin_arm64.tar.gz)
 
 ### Examples
 
 Linux amd64:
 
 ```bash
-wget https://github.com/mxssl/dns/releases/download/v1.0.8/dns_linux_amd64.tar.gz
+wget https://github.com/mxssl/dns/releases/download/latest/dns_linux_amd64.tar.gz
 tar zvxf dns_linux_amd64.tar.gz
 mv dns /usr/local/bin/dns
 chmod +x /usr/local/bin/dns
@@ -50,7 +48,7 @@ rm dns_linux_amd64.tar.gz
 MacOS amd64:
 
 ```bash
-wget https://github.com/mxssl/dns/releases/download/v1.0.8/dns_darwin_amd64.tar.gz
+wget https://github.com/mxssl/dns/releases/download/latest/dns_darwin_amd64.tar.gz
 tar zvxf dns_darwin_amd64.tar.gz
 mv dns /usr/local/bin/dns
 chmod +x /usr/local/bin/dns
@@ -60,11 +58,28 @@ rm dns_darwin_amd64.tar.gz
 MacOS arm64:
 
 ```bash
-wget https://github.com/mxssl/dns/releases/download/v1.0.8/dns_darwin_arm64.tar.gz
+wget https://github.com/mxssl/dns/releases/download/latest/dns_darwin_arm64.tar.gz
 tar zvxf dns_darwin_arm64.tar.gz
 mv dns /usr/local/bin/dns
 chmod +x /usr/local/bin/dns
 rm dns_darwin_arm64.tar.gz
+```
+
+Golang
+
+```bash
+go install github.com/mxssl/dns@latest
+```
+
+Docker
+
+```bash
+docker \
+  container \
+  run \
+  --rm \
+  mxssl/dns:v1.0.9 \
+  dns a golang.com
 ```
 
 ## Usage
@@ -183,16 +198,6 @@ You can use these resolvers:
 | opendns1   | 208.67.222.222 |
 | opendns2   | 208.67.220.220 |
 | quad9      | 9.9.9.9        |
-
-## Docker
-
-```sh
-docker container \
-  run \
-  --rm \
-  mxssl/dns:v1.0.8 \
-  dns a golang.com
-```
 
 ## Development
 
