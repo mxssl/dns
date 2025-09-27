@@ -29,18 +29,18 @@ dns a github.com
 
 ### Download compiled binary
 
-[Linux amd64](https://github.com/mxssl/dns/releases/download/1.0.8/dns_Linux_x86_64.tar.gz)
+[Linux amd64](https://github.com/mxssl/dns/releases/download/v1.0.8/dns_Linux_x86_64.tar.gz)
 
-[MacOS amd64](https://github.com/mxssl/dns/releases/download/1.0.8/dns_darwin_amd64.tar.gz)
+[MacOS amd64](https://github.com/mxssl/dns/releases/download/v1.0.8/dns_darwin_amd64.tar.gz)
 
-[MacOS arm64](https://github.com/mxssl/dns/releases/download/1.0.8/dns_darwin_arm64.tar.gz)
+[MacOS arm64](https://github.com/mxssl/dns/releases/download/v1.0.8/dns_darwin_arm64.tar.gz)
 
 ### Examples
 
 Linux amd64:
 
 ```bash
-wget https://github.com/mxssl/dns/releases/download/1.0.8/dns_linux_amd64.tar.gz
+wget https://github.com/mxssl/dns/releases/download/v1.0.8/dns_linux_amd64.tar.gz
 tar zvxf dns_linux_amd64.tar.gz
 mv dns /usr/local/bin/dns
 chmod +x /usr/local/bin/dns
@@ -50,7 +50,7 @@ rm dns_linux_amd64.tar.gz
 MacOS amd64:
 
 ```bash
-wget https://github.com/mxssl/dns/releases/download/1.0.8/dns_darwin_amd64.tar.gz
+wget https://github.com/mxssl/dns/releases/download/v1.0.8/dns_darwin_amd64.tar.gz
 tar zvxf dns_darwin_amd64.tar.gz
 mv dns /usr/local/bin/dns
 chmod +x /usr/local/bin/dns
@@ -60,7 +60,7 @@ rm dns_darwin_amd64.tar.gz
 MacOS arm64:
 
 ```bash
-wget https://github.com/mxssl/dns/releases/download/1.0.8/dns_darwin_arm64.tar.gz
+wget https://github.com/mxssl/dns/releases/download/v1.0.8/dns_darwin_arm64.tar.gz
 tar zvxf dns_darwin_arm64.tar.gz
 mv dns /usr/local/bin/dns
 chmod +x /usr/local/bin/dns
