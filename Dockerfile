@@ -1,4 +1,4 @@
-FROM golang:1.25.5-alpine3.22 as builder
+FROM golang:1.25.6-alpine3.23 as builder
 
 ENV GO111MODULE=on
 ARG VERSION=dev
@@ -8,16 +8,16 @@ COPY . .
 
 # Install external dependcies
 RUN apk add --no-cache \
-  ca-certificates \
-  curl \
-  git
+	ca-certificates \
+	curl \
+	git
 
 # Compile binary
 
 RUN CGO_ENABLED=0 \
-  GOOS=`go env GOHOSTOS` \
-  GOARCH=`go env GOHOSTARCH` \
-  go build -v -o dns -ldflags "-X github.com/mxssl/dns/cmd.version=$VERSION"
+	GOOS=`go env GOHOSTOS` \
+	GOARCH=`go env GOHOSTARCH` \
+	go build -v -o dns -ldflags "-X github.com/mxssl/dns/cmd.version=$VERSION"
 
 # Copy compiled binary to clear Alpine Linux image
 FROM alpine:3.23
