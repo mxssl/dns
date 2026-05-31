@@ -78,7 +78,7 @@ docker \
   container \
   run \
   --rm \
-  mxssl/dns:v1.0.10 \
+  mxssl/dns:v1.0.11 \
   dns a golang.com
 ```
 
