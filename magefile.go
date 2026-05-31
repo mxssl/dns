@@ -106,7 +106,7 @@ func GitHubReleaseDryRun() error {
 		fmt.Println("env variable GITHUB_TOKEN is not set\n")
 	}
 
-	if err := sh.RunV("goreleaser", "release", "--rm-dist", "--snapshot", "--skip-publish"); err != nil {
+	if err := sh.RunV("goreleaser", "release", "--clean", "--snapshot", "--skip=publish"); err != nil {
 		return err
 	}
 	return nil
@@ -125,7 +125,7 @@ func GitHubRelease() error {
 		fmt.Println("env variable GITHUB_TOKEN is not set")
 	}
 
-	if err := sh.RunV("goreleaser", "release", "--rm-dist"); err != nil {
+	if err := sh.RunV("goreleaser", "release", "--clean"); err != nil {
 		return err
 	}
 	return nil
